@@ -9,4 +9,4 @@ module FilePolice
 end
 
 require 'file_police/backlog_file'
-require 'file_police/judge'
+require 'file_police/ruling'
