@@ -67,12 +67,12 @@ describe FilePolice::BacklogFile do
 
     it "has an incorrect box" do
       invalid = FilePolice::BacklogFile.new("ARC0001_box2_FL4_name_001.tif")
-      invalid.errors.should include "box2 does not match BX# format"
+      invalid.errors.should include "box2 does not have the correct format"
     end
 
     it "has an incorrect folder" do
       invalid = FilePolice::BacklogFile.new("ARC0001_BX1_folder3_name_001.tif")
-      invalid.errors.should include "folder3 does not match FL# format"
+      invalid.errors.should include "folder3 does not have the correct format"
     end
 
   end

@@ -34,19 +34,19 @@ class FilePolice::BacklogFile
 
   # Should match strings like BX1
   def validate_box box = String.new
-    self.errors << "#{box} does not match BX# format" unless box.match(/^[A-Z]{2,2}[0-9]{1,3}$/)
+    self.errors << "#{box} does not have the correct format" unless box.match(/^[A-Z]{2,2}[0-9]{1,3}$/)
     self.box = box
   end
 
   # Should match strings like FL1, OS2, or FL22b
   def validate_folder folder = String.new
-    self.errors << "#{folder} does not match FL# format" unless folder.match(/^FL[0-9]{1,3}[a-z]{0,1}$/)
+    self.errors << "#{folder} does not have the correct format" unless folder.match(/^[A-Z]{2,2}[0-9]{1,3}[a-z]{0,1}$/)
     self.folder = folder
   end
 
   # Sould be numbers only
   def validate_number number = String.new
-    self.errors << "#{number} does not match number format" unless number.match(/^[0-9]{1,4}[a-z]{0,1}$/)
+    self.errors << "#{number} does not have the correct format" unless number.match(/^[0-9]{1,4}[a-z]{0,1}$/)
     self.number = number
   end
 
