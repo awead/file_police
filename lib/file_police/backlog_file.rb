@@ -38,9 +38,9 @@ class FilePolice::BacklogFile
     self.box = box
   end
 
-  # Should match strings like FL1
+  # Should match strings like FL1, OS2, or FL22b
   def validate_folder folder = String.new
-    self.errors << "#{folder} does not match FL# format" unless folder.match(/^FL[0-9]{1,3}$/)
+    self.errors << "#{folder} does not match FL# format" unless folder.match(/^FL[0-9]{1,3}[a-z]{0,1}$/)
     self.folder = folder
   end
 

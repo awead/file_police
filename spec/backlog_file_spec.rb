@@ -40,6 +40,10 @@ describe FilePolice::BacklogFile do
       FilePolice::BacklogFile.new("ARC0001_OS1_FL1_name_001.tif").errors.should be_empty
     end
 
+    it "can have folders with letter designations" do
+      FilePolice::BacklogFile.new("ARC0001_OS1_FL33b_name_001.tif").errors.should be_empty
+    end
+
   end
 
   describe "an invalid filename" do
