@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require 'file_police'
+if ARGV[0]
+  tickets = FilePolice.patrol(ARGV[0]).collect { |t| t unless t.violations.empty? }.compact
+  if tickets.empty?
+    exit(0)
+  else
+    puts "Awwww, 5-0, yo!"
+    tickets.collect { |t| puts t.file }
+    exit(1)
+  end
+end
