@@ -32,6 +32,14 @@ describe FilePolice::BacklogFile do
       @sample.number.should == "001"
     end
 
+    it "can have numbers at the end" do
+      FilePolice::BacklogFile.new("ARC0001_BX1_FL1_name_001b.tif").errors.should be_empty
+    end
+
+    it "can have OS instead of BX" do
+      FilePolice::BacklogFile.new("ARC0001_OS1_FL1_name_001.tif").errors.should be_empty
+    end
+
   end
 
   describe "an invalid filename" do

@@ -34,7 +34,7 @@ class FilePolice::BacklogFile
 
   # Should match strings like BX1
   def validate_box box = String.new
-    self.errors << "#{box} does not match BX# format" unless box.match(/^BX[0-9]{1,3}$/)
+    self.errors << "#{box} does not match BX# format" unless box.match(/^[A-Z]{2,2}[0-9]{1,3}$/)
     self.box = box
   end
 
@@ -46,7 +46,7 @@ class FilePolice::BacklogFile
 
   # Sould be numbers only
   def validate_number number = String.new
-    self.errors << "#{number} does not match number format" unless number.match(/^[0-9]{1,4}$/)
+    self.errors << "#{number} does not match number format" unless number.match(/^[0-9]{1,4}[a-z]{0,1}$/)
     self.number = number
   end
 
